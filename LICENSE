@@ -1,0 +1,65 @@
+SKYCATCHER RESTRICTED SOURCE LICENSE v1.0
+
+Copyright (c) 2026 Pragyaan Gaur. All Rights Reserved.
+
+This repository contains software, computational models, experimental data, engineering references, and documentation related to the SkyCatcher catalytic oxidation system (collectively "SkyCatcher").
+
+────────────────────────────────────────────
+1. SOFTWARE & COMPUTATIONAL COMPONENTS
+────────────────────────────────────────────
+
+Permission is hereby granted to:
+- View and study the software and computational models
+- Use the code for academic, research, and non-commercial purposes only
+
+You are NOT permitted to:
+- Use the software for commercial purposes
+- Redistribute, sublicense, or publish modified versions
+- Incorporate the software into commercial systems or products
+
+Any commercial use requires explicit prior written permission from the author.
+
+────────────────────────────────────────────
+2. HARDWARE, ENGINEERING DESIGN & IP
+────────────────────────────────────────────
+
+This repository references a physical engineering system, including:
+- Catalytic reactor design concepts
+- Structural and system-level methodologies
+- Experimental configurations and derived models
+
+All rights to hardware design, fabrication methods, schematics, and underlying engineering systems are strictly reserved.
+
+No license, express or implied, is granted for:
+- Manufacturing or constructing any physical device based on this work
+- Commercial exploitation of the design or methodology
+- Filing derivative patents or IP claims
+
+The physical system is subject to active or pending intellectual property protection.
+
+────────────────────────────────────────────
+3. DATA & RESULTS
+────────────────────────────────────────────
+
+Experimental data and outputs are provided for research transparency only.
+They may not be republished or used for commercial inference systems without permission.
+
+────────────────────────────────────────────
+4. OWNERSHIP
+────────────────────────────────────────────
+
+All intellectual property remains exclusively owned by the author.
+No rights are transferred through access to this repository.
+
+────────────────────────────────────────────
+5. DISCLAIMER
+────────────────────────────────────────────
+
+This software and all associated materials are provided "as is", without warranty of any kind.
+The author is not liable for any damages or consequences arising from use or misuse of the material.
+
+────────────────────────────────────────────
+6. TERMINATION
+────────────────────────────────────────────
+
+Any violation of this license automatically terminates all granted permissions.
