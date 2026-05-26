@@ -1,0 +1,173 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{chemarr}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{float}
+
+\geometry{margin=1in}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\title{\textbf{Maximum Conversion Efficiency of the \\ SkyCatcher Catalytic Reactor}}
+\author{Pragyaan Gaur}
+\date{January 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+This technical note evaluates the theoretical conversion limits of the SkyCatcher catalytic reactor. By coupling Arrhenius kinetic models with thermodynamic equilibrium constraints, we identify a critical operating regime. The analysis demonstrates that the system is fundamentally limited to a maximum single-pass SO$_2$ conversion of approximately 88.6\% at an optimal temperature of 745 K. At this operating point, the reactor transitions to an equilibrium-limited state, rendering residence times beyond $\sim$1 second ineffective for further efficiency gains. The corresponding maximum sulfuric acid yield is projected at 1.36 g per gram of SO$_2$.
+\end{abstract}
+
+\section{Reaction System Overview}
+
+SkyCatcher is based on the heterogeneous catalytic oxidation of sulfur dioxide in the presence of a copper-based catalytic surface:
+
+\begin{equation}
+\mathrm{SO_2 + \tfrac{1}{2}O_2 \xrightleftharpoons[\ ]{\mathrm{Cu}} SO_3}
+\end{equation}
+
+followed by rapid hydration of sulfur trioxide to sulfuric acid. The oxidation step is exothermic and reversible, implying that the achievable sulfur dioxide conversion is fundamentally limited by both reaction kinetics and thermodynamic equilibrium.
+
+The physically meaningful conversion efficiency is therefore defined as:
+
+\begin{equation}
+X(T,\tau) = \min\!\left(X_{\mathrm{kinetic}}(T,\tau),\; X_{\mathrm{equilibrium}}(T)\right)
+\end{equation}
+
+where $T$ is the reactor temperature and $\tau$ is the gas residence time over the catalyst.
+
+Industrial studies of SO$_2$ oxidation in copper flash smelting and heat-recovery systems report strong temperature sensitivity and catalyst-induced shifts in SO$_3$ formation, with observed maxima occurring at elevated temperatures in the presence of oxide catalysts and process dust. These observations are consistent with the kinetic–thermodynamic trade-offs highlighted in the present upper-bound analysis.
+
+
+\section{Kinetic Conversion and Residence Time Dependence}
+
+The SkyCatcher kinetics are modeled using an Arrhenius-type rate constant:
+
+\begin{equation}
+k(T) = k_0 e^{-\frac{E_a}{RT}}
+\end{equation}
+
+with representative parameters:
+\[
+E_a = 80\text{--}95~\mathrm{kJ\,mol^{-1}}, \qquad
+k_0 = 10^6\text{--}10^7~\mathrm{s^{-1}}
+\]
+
+The kinetic parameters E$_a$ and k$_0$ are taken as order-of-magnitude representative values for catalytic SO$_2$ oxidation and are used solely to illustrate the transition between kinetic and equilibrium control rather than to provide a system-specific rate law. Accordingly, the analysis represents an idealized upper-bound model neglecting mass-transfer resistance and catalyst deactivation.
+
+Assuming plug-flow–like behavior in the catalytic section, the kinetic conversion is as follows:
+
+\begin{equation}
+X_{\mathrm{kinetic}}(T,\tau) = 1 - e^{-k(T)\tau}
+\end{equation}
+
+This expression makes the role of reaction time explicit. At fixed temperature, sulfur dioxide conversion increases monotonically with residence time. For short residence times $(k(T)\tau \ll 1)$, the system is kinetically limited and increases in $\tau$ produce substantial efficiency gains. As $\tau$ increases further, the kinetic conversion asymptotically approaches unity.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{kinetics.png}
+    \caption{\textbf{Kinetic Conversion Limit.} The fundamental kinetic profile ($X_{kin}$) for a fixed residence time, showing the characteristic S-curve behavior where kinetic conversion rapidly increases with temperature before equilibrium effects become relevant.}
+    \label{fig:kinetics}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{3times.png}
+    \caption{\textbf{Sensitivity to Residence Time.} Comparison of conversion profiles for $\tau = 0.1, 1.0,$ and $10$ s. Increasing residence time shifts the active window to lower temperatures but does not alter the high-temperature limits.}
+    \label{fig:residence}
+\end{figure}
+
+\section{Thermodynamic Equilibrium Limits}
+
+The equilibrium constraint for sulfur dioxide oxidation is represented using a temperature-dependent equilibrium constant:
+
+\begin{equation}
+K_{\mathrm{eq}}(T) = e^{(\frac{6000}{T} - 6)}
+\end{equation}
+
+leading to the equilibrium conversion ceiling:
+
+\begin{equation}
+X_{\mathrm{equilibrium}}(T) = \frac{K_{\mathrm{eq}}}{1 + K_{\mathrm{eq}}}
+\end{equation}
+
+Because the reaction is exothermic, the equilibrium conversion decreases with increasing temperature. Notably, the equilibrium limit is independent of the residence time.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{equil.png}
+    \caption{\textbf{Thermodynamic Equilibrium Limit.} The theoretical maximum conversion ($X_{eq}$) allowed by thermodynamics. Unlike kinetics, this ceiling degrades as temperature increases.}
+    \label{fig:equilibrium}
+\end{figure}
+
+\section{Coupled Temperature and Residence Time Effects}
+
+The interaction between temperature and reaction time produces three operating regimes:
+
+\begin{enumerate}
+\item \textbf{Kinetically limited regime}: low temperature and short residence time, where increasing $\tau$ significantly increases conversion.
+\item \textbf{Mixed control regime}: intermediate temperature and residence time, where both kinetics and equilibrium influence efficiency.
+\item \textbf{Equilibrium-limited regime}: sufficiently high temperature and residence time, where further increases in $\tau$ do not improve conversion.
+\end{enumerate}
+
+For SkyCatcher-relevant residence times on the order of $\tau \sim 1~\mathrm{s}$, the transition to equilibrium limitation occurs near $700$ to $750~\mathrm{K}$.
+
+\section{Maximum Achievable Efficiency}
+
+The total conversion is given by:
+
+\begin{equation}
+X_{\mathrm{total}}(T,\tau) =
+\min\!\left[1 - e^{-k(T)\tau},\; \frac{K_{\mathrm{eq}}}{1 + K_{\mathrm{eq}}}\right]
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{so2conv.png}
+    \caption{\textbf{Total System Efficiency.} The optimization curve showing the global maximum. The system achieves a peak conversion of $\approx 88.6\%$ at $T_{opt} \approx 745$ K. Operating beyond this point reduces yield due to the thermodynamic ceiling.}
+    \label{fig:total}
+\end{figure}
+
+Numerical optimization over the operating window $400~\mathrm{K} < T < 900~\mathrm{K}$, for $\tau \sim 1~\mathrm{s}$, yields:
+
+\begin{equation}
+T_{\mathrm{opt}} \approx 745~\mathrm{K}, \qquad
+X_{\max} \approx 88\text{--}89\%
+\end{equation}
+
+At this operating point, the system is equilibrium-limited, and increasing residence time produces negligible further gains in conversion efficiency.
+
+\section{Sulfuric Acid Yield}
+
+Complete oxidation and hydration yields the stoichiometric relation:
+
+\begin{equation}
+1~\mathrm{g~SO_2} \rightarrow 1.53~\mathrm{g~H_2SO_4}
+\end{equation}
+
+The sulfuric acid yield is therefore:
+
+\begin{equation}
+Y(T,\tau) = 1.53 \times X_{\mathrm{total}}(T,\tau)
+\end{equation}
+
+At the optimized operating point, this corresponds to a maximum yield of approximately:
+
+\begin{equation}
+Y_{\max} \approx 1.35\text{--}1.37~\mathrm{g~H_2SO_4~per~g~SO_2}
+\end{equation}
+
+\section{Design Implication}
+
+For a single-pass SkyCatcher module, reaction time controls efficiency only in the kinetically limited regime. At practical residence times ($\sim 1\,\mathrm{s}$), the device reaches a fundamental equilibrium-limited ceiling of $\approx 88\text{--}89\%$ SO$_2$ conversion, corresponding to $\approx 1.36\,\mathrm{gram\ H_2SO_4\ per\ gram\ of\ SO_2}$. Beyond this point, increasing the reaction time no longer improves efficiency, and further gains require equilibrium-shifting system design rather than longer catalytic contact.
+
+
+
+\end{document}
