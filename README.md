@@ -1,6 +1,6 @@
 # SkyCatcher
 
-SkyCatcher is a catalytic oxidation reactor designed for industrial sulfur dioxide (SO₂) capture and conversion into sulfuric acid (H₂SO₄). The system is currently at Technology Readiness Level 4 (TRL-4), has been filed under a provisional patent, and has received external research grants. This repository focuses on modeling and analysis, not hardware implementation.
+SkyCatcher is a catalytic oxidation reactor designed for industrial sulfur dioxide (SO₂) capture and conversion into sulfuric acid (H₂SO₄). The system is currently patent pending and has received external research grants. This repository focuses on modeling and analysis, not hardware implementation.
 
 ## Overview
 
